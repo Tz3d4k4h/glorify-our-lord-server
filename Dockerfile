@@ -1,0 +1,13 @@
+FROM openjdk:11
+
+ENV DATABASE_USER=$DATABASE_USER
+ENV JDBC_URL=$JDBC_URL
+ENV DATABASE_PASSWORD=$DATABASE_PASSWORD
+ENV PORT=$PORT
+ENV ALLOWED_ORIGINS=$ALLOWED_ORIGINS
+
+COPY ./glorify-the-lord.jar /glorify-the-lord.jar
+
+CMD ["java", "-jar", "glorify-the-lord.jar"]
+
+EXPOSE $PORT
